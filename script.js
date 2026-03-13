@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Modal Logic - Globally Accessible
-function openEventModal(title, date, location, description, image) {
+function openEventModal(title, date, location, description, image, fallback) {
+
   const modal = document.getElementById('eventModal');
   const modalTitle = document.getElementById('modalTitle');
   const modalDate = document.getElementById('modalDate');
@@ -96,14 +97,20 @@ function openEventModal(title, date, location, description, image) {
   if (modalDate) modalDate.textContent = `📅 ${date}`;
   if (modalLocation) modalLocation.textContent = `📍 ${location}`;
   if (modalDescription) modalDescription.textContent = description;
-  if (modalImage) modalImage.src = image;
+
+  if (modalImage) {
+    modalImage.src = "images/" + image;
+
+    modalImage.onerror = function () {
+      modalImage.src = fallback;
+    };
+  }
 
   if (modal) {
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent scroll
+    document.body.style.overflow = 'hidden';
   }
 }
-
 function closeEventModal() {
   const modal = document.getElementById('eventModal');
   if (modal) {
