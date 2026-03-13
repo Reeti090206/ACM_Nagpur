@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Gallery | ACM Nagpur Professional Chapter</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .filter-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .filter-chip {
+            padding: 0.5rem 1.5rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .filter-chip.active, .filter-chip:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        .event-card {
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .event-image {
+            height: 220px;
+            background: var(--bg-offset);
+            position: relative;
+        }
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .event-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .status-upcoming { background: var(--primary); color: white; }
+        .status-past { background: #fee2e2; color: #ef4444; }
+        .status-archive { background: #f1f5f9; color: #64748b; }
+        
+        .event-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        .event-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link" style="display: flex; align-items: center; text-decoration: none; overflow: visible;">
+                <img src="images/acm_logo.png" alt="ACM Nagpur Logo" style="height: 85px; width: auto; display: block;">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="events.html" class="active">Events Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="btn btn-primary mobile-only" style="margin-top: 1rem; display: none;">Become a Member</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem;">Become a Member</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="section section-gradient" style="padding-top: 10rem; text-align: center;">
+        <div class="container">
+            <span class="badge">Events & Activities</span>
+            <h1 style="font-size: 3rem; margin-top: 1rem;">Chapter <span class="premium-text">Gallery</span></h1>
+            <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 1.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Relive the moments of innovation and collaboration from our recent workshops and national hackathons.
+            </p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="filter-group">
+               
+            </div>
+
+            <div class="event-grid">
+                <!-- Winter School -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-past">Past Event</span>
+                        <img src="images/acm_winter_school_poster.png" alt="ACM Winter School" onerror="this.src='https://via.placeholder.com/400x250?text=Digital+Twin+Winter+School'">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Dec 15-24, 2025</span>
+                            <span>📍 RBU Nagpur</span>
+                        </div>
+                        <h3>ACM India Winter School 2025</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">Theme: Engineering the Future with Digital Twin. Limited to 40 participants!</p>
+                        <button onclick="openEventModal('ACM India Winter School 2025', 'Dec 15-24, 2025', 'RBU Nagpur', 'Theme: Engineering the Future with Digital Twin. This prestigious winter school brings together leading researchers and industry experts to discuss the latest advancements in Digital Twin technology. Participants will engage in hands-on labs, expert talks, and networking sessions.','Winterschool_acm.jpeg', 'https://via.placeholder.com/600x400?text=Digital+Twin+Winter+School')" class="btn btn-outline" style="width: 100%;">View Details</button>
+                    </div>
+                </div>
+<!-- St. Vincent Pallotti -->
+<div class="card event-card">
+    <div class="event-image">
+        <span class="event-status status-past">Past Event</span>
+        <img src="images/Palloti.jpg" alt="Hands-on System Programming Workshop"
+        onerror="this.src='https://via.placeholder.com/400x250?text=Hands-on+System+Programming'">
+    </div>
+
+    <div class="event-content">
+        <div class="event-meta">
+            <span>📅 1st November, 2025</span>
+            <span>📍 SVPCET Nagpur</span>
+        </div>
+
+        <h3>Hands-On System Programming</h3>
+
+        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">
+            An Industry Expert Led Workshop organized by the ACM CE Student Chapter in association with ACM Nagpur Professional Chapter.
+        </p>
+
+        <button onclick="openEventModal(
+        'Hands-On System Programming',
+        '1st November, 2025',
+        'Computer Labs, 1st Floor, Dept. of CSE, SVPCET Nagpur',
+        'A hands-on workshop on System Programming conducted by industry experts. Speakers included Mr. Asang Dani (Member of Technical Staff, Arista Networks) and Mr. Manoj Dhanorkar (Principal Architect, Persistent Systems). The session was accompanied by Mr. Gunjan Garge and Mr. Abhishek Anne from Persistent Systems, providing students practical exposure to system-level programming concepts and real-world industry insights.',
+        'Palloti.jpg',
+        'Palloti.jpg'
+        )" class="btn btn-outline" style="width: 100%;">
+            View Details
+        </button>
+    </div>
+</div>
+
+
+
+
+                <!-- Cloud Sphere -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-past">Past Event</span>
+                        <img src="images/JIT_acm.png" alt="Cloud Sphere 2025" onerror="this.src='https://via.placeholder.com/400x250?text=Cloud+Sphere+2025'">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Early 2025</span>
+                            <span>📍 JIT ACM Chapter</span>
+                        </div>
+                        <h3>Cloud Sphere 2025</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1rem; font-size: 0.95rem;">Cloud Computing & Big Data insights featuring industry experts from Persistent Systems and academia.</p>
+                        <div style="font-size: 0.85rem; background: var(--bg-offset); padding: 0.75rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <strong>Speakers:</strong>
+                            <ul style="padding-left: 1rem; margin-top: 0.25rem;">
+                                <li>Jyoti Notani (Persistent Systems)</li>
+                                <li>Dr. Purshottam J. Assudani (RBU)</li>
+                            </ul>
+                        </div>
+                        <button onclick="openEventModal('Cloud Sphere 2025', 'Early 2025', 'JIT ACM Chapter', 'An insightful session on modern cloud infrastructure and big data tools. Featuring keynote speakers from Persistent Systems and academic leaders, this event provided deep dives into scalable architectures and data pipelines.','JIT.png', 'https://via.placeholder.com/600x400?text=Cloud+Sphere+2025')" class="btn btn-outline" style="width: 100%;">View Details</button>
+                    </div>
+                </div>
+
+                <!-- CodeRush -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-past">Past Event</span>
+                        <img src="images/YCCE-acm.png" alt="CodeRush 1.0" onerror="this.src='https://via.placeholder.com/400x250?text=CODERUSH+1.0'">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Aug 22-23, 2024</span>
+                            <span>📍 YCCE Nagpur</span>
+                        </div>
+                        <h3>CODERUSH 1.0</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1rem; font-size: 0.95rem;">24-hour National Level Hackathon part of Compufest 2K25 with massive participation.</p>
+                        <div style="font-size: 0.85rem; background: var(--bg-offset); padding: 0.75rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <strong>Impact:</strong> 1,400+ Reg | 80K+ Impressions<br>
+                            <strong>Inaugurated by:</strong> Er. Snehal Aekre
+                        </div>
+                         
+                        <button onclick="openEventModal('CODERUSH 1.0', 'Aug 22-23, 2024', 'YCCE Nagpur', 'CODERUSH 1.0 was a landmark 24-hour national hackathon that saw over 1,400 registrations. Part of Compufest 2025, it featured intense competition, industry mentorship, and significant social media engagement.' ,'Coderush.jpeg', 'https://via.placeholder.com/600x400?text=CODERUSH+1.0')" class="btn btn-outline" style="width: 100%;">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Schedulability Analysis -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-archive">Archive</span>
+                        <div style="width: 100%; height: 100%; background: #f8fafc; display: flex; align-items: center; justify-content: center; color: #cbd5e1; font-size: 3.5rem;">⚙️</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Dec 12-17, 2016</span>
+                            <span>📍 VNIT Nagpur</span>
+                        </div>
+                        <h3>Schedulability Analysis</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">Workshop on Schedulability Analysis of Real Time Systems. Deep dive into embedded systems.</p>
+                        <a href="#" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <!-- DIS-2016 -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-archive">Archive</span>
+                         <img src="images/DIS.png" alt="DIS-2016" onerror="this.src='https://via.placeholder.com/400x250?text=DIS-2016'">
+                        
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Dec 03-07, 2016</span>
+                            <span>📍 VNIT Nagpur</span>
+                        </div>
+                        <h3>Designing Intelligent Systems</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">DIS-2016 Workshop focused on creating the next generation of smart, adaptive architectures.</p>
+                        <a href="#" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Scala -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-archive">Archive</span>
+                        <img src="images/FPWS.png" alt="FPWS-2016" onerror="this.src='https://via.placeholder.com/400x250?text=FPWS-2016'">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Apr 9, 2016</span>
+                            <span>📍 Nagpur</span>
+                        </div>
+                        <h3>Programming with Scala</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">Functional programming basics and hands-on session with Scala led by industry expert Atul Khot.</p>
+                        <a href="#" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Programming Language Talk -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-archive">Archive</span>
+                        <div style="width: 100%; height: 100%; background: #f8fafc; display: flex; align-items: center; justify-content: center; color: #cbd5e1; font-size: 3.5rem;">🔤</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Jan 29, 2016</span>
+                            <span>📍 Nagpur</span>
+                        </div>
+                        <h3>Choosing Langauges</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">Expert talk: "Which Programming Language should you learn and why?" by Navin Kabra.</p>
+                        <a href="#" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Machine Learning R -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-archive">Archive</span>
+                        <img src="images/R.png" alt="ML with R" onerror="this.src='https://via.placeholder.com/400x250?text=ML+with+R'">
+                       
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Jan 4-9, 2016</span>
+                            <span>📍 YCCE Nagpur</span>
+                        </div>
+                        <h3>ML with R</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">Comprehensive workshop on Machine Learning algorithms and statistical implementations using R.</p>
+                        <a href="#" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Ecommerce Search -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-archive">Archive</span>
+                        <img src="images/Ecommerce.png" alt="eCommerce Search Engine" onerror="this.src='https://via.placeholder.com/400x250?text=eCommerce+Search+Engine'">
+                      
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Nov 23, 2015</span>
+                            <span>📍 Nagpur</span>
+                        </div>
+                        <h3>eCommerce Search Engine</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">Expert talk on Building an eCommerce Search Engine by Gaurav Bhalotia (VP Engineering, Flipkart).</p>
+                        <a href="#" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Startup Talk -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-archive">Archive</span>
+                     <img src="images/Startup.png" alt="Startup Talk" onerror="this.src='https://via.placeholder.com/400x250?text=Startup+Talk'">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Jan 29, 2016</span>
+                            <span>📍 Nagpur</span>
+                        </div>
+                        <h3>Startup Eco-System</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">Fireside chat about the Startup ecosystem in Pune with Amit Paranjape. Exploring growth models.</p>
+                        <a href="#" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Compute 2014 -->
+                <div class="card event-card">
+                    <div class="event-image">
+                        <span class="event-status status-archive">Archive</span>
+                        <div style="width: 100%; height: 100%; background: #f8fafc; display: flex; align-items: center; justify-content: center; color: #cbd5e1; font-size: 3.5rem;">🏢</div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span>📅 Oct 9, 2014</span>
+                            <span>📍 Nagpur</span>
+                        </div>
+                        <h3>Compute & COMAD</h3>
+                        <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">ACM Nagpur hosted Compute 2014 and COMAD 2010 with support from VNIT and Persistent Systems.</p>
+                        <a href="#" class="btn btn-outline" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section class="section" id="news">
+<div class="container">
+
+<div style="text-align:center; margin-bottom:3rem;">
+<span class="badge">Media Coverage</span>
+
+<h2 style="font-size:2.5rem; margin-top:1rem;">
+ACM Nagpur in <span class="premium-text">News</span>
+</h2>
+
+<p style="color: var(--text-muted); max-width:700px; margin:1rem auto 0;">
+Highlights of ACM Nagpur Professional Chapter featured in newspapers and media outlets.
+</p>
+</div>
+
+<div class="news-grid">
+
+<!-- Article 1 -->
+<div class="news-card"
+onclick="openNewsModal(
+'Meghe Group Hosts Regional CTiS Conference',
+'ctis_meghe.jpg',
+'Meghe Group of Schools organized the 4th Regional Conference on Computational Thinking in Schools (CTiS) in collaboration with ACM India and ACM Nagpur Professional Chapter.'
+)">
+
+<img src="images/ctis_meghe.jpg.png" alt="CTiS Conference News">
+
+<div class="news-content">
+<h4>Meghe Group Hosts Regional CTiS Conference</h4>
+</div>
+
+</div>
+
+<!-- Article 2 -->
+<div class="news-card"
+onclick="openNewsModal(
+'PCE Conducts Cloud Computing Session',
+'cloud_PCE.png',
+'Priyadarshini College of Engineering ACM Student Chapter organized the Cloud Sphere session in collaboration with ACM Nagpur Professional Chapter focusing on real-world cloud computing applications.'
+)">
+
+<img src="images/cloud_PCE.png" alt="Cloud Computing Session News">
+
+<div class="news-content">
+<h4>PCE Conducts Cloud Computing Session</h4>
+</div>
+
+</div>
+
+<!-- Article 3 -->
+<div class="news-card"
+onclick="openNewsModal(
+'Workshop on Engineering with Digital Twins',
+'digital_twin.jpg',
+'ACM Nagpur Professional Chapter conducted a Winter School workshop on Engineering the Future with Digital Twins where selected students participated in expert sessions and hands-on training.'
+)">
+
+<img src="images/digital_twin.jpg" alt="Digital Twin Workshop News">
+
+<div class="news-content">
+<h4>Workshop on Engineering with Digital Twins</h4>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<div id="newsModal" class="modal-overlay">
+
+<div class="modal-content">
+
+<span class="close-modal" onclick="closeNewsModal()">&times;</span>
+
+<img id="newsModalImage">
+
+<h2 id="newsModalTitle"></h2>
+
+<p id="newsModalDescription"></p>
+
+</div>
+
+</div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column" style="max-width: 300px;">
+                    <a href="index.html" class="logo-link" style="margin-bottom: 1.5rem;">
+                        <span style="font-weight: 700; color: var(--primary); font-size: 1.5rem;">ACM NAGPUR</span>
+                    </a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Advancing Computing as a Science and Profession. Connecting local talent with global opportunities.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://x.com/NagpurACM" target="_blank">X (Twitter)</a></li>
+                        <li><a href="mailto:nagpur_acm@gmail.com">Email Us</a></li>
+                        <li><a href="https://nagpur.acm.org/wp/" target="_blank">Official Site</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ACM Nagpur Professional Chapter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Event Dialog / Modal -->
+    <div id="eventModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeEventModal()">&times;</span>
+            <div id="modalImageContainer" style="margin: -3.5rem -3.5rem 2rem; height: 250px; overflow: hidden; border-radius: 20px 20px 0 0;">
+                <img id="modalImage" src="" alt="Event Header" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title">Event Title</h2>
+                <div class="modal-meta">
+                    <span id="modalDate">📅 Date</span>
+                    <span id="modalLocation">📍 Location</span>
+                </div>
+            </div>
+            <p id="modalDescription" style="color: var(--text-gray); line-height: 1.8; font-size: 1.05rem;">
+                Event details go here...
+            </p>
+            <div style="margin-top: 3rem; display: flex; gap: 1rem;">
+                <a href="contact.html" class="btn btn-primary" style="flex: 1; justify-content: center;">Enquire for Similar Events</a>
+                <button onclick="closeEventModal()" class="btn btn-outline" style="flex: 1; justify-content: center;">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

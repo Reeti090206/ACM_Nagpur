@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ACM Nagpur Professional Chapter</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+        .contact-info-card {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .icon-square {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
+        }
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link" style="display: flex; align-items: center; text-decoration: none; overflow: visible;">
+                <img src="images/acm_logo.png" alt="ACM Nagpur Logo" style="height: 85px; width: auto; display: block;">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="events.html">Events Gallery</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="contact.html" class="btn btn-primary mobile-only" style="margin-top: 1rem; display: none;">Become a Member</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem;">Become a Member</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="section section-gradient" style="padding-top: 10rem;">
+        <div class="container">
+            <div style="max-width: 800px;">
+                <span class="badge">Contact Us</span>
+                <h1 style="font-size: 3rem; margin-top: 1rem;">Get in <span class="premium-text">Touch</span> with Our Team</h1>
+                <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 1.5rem;">
+                    Have questions about the Winter School 2025 or interested in joining the chapter? We'd love to hear from you.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-info-card">
+                        <div class="icon-square">📧</div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p style="color: var(--text-muted); margin-top: 0.25rem;"><a href="mailto:nagpur_acm@gmail.com" style="color: inherit; text-decoration: none;">nagpur_acm@gmail.com</a></p>
+                            <p style="color: var(--primary); font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Free Chapter Membership</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="icon-square">📱</div>
+                        <div>
+                            <h4>Connect Socially</h4>
+                            <p style="color: var(--text-muted); margin-top: 0.25rem;">Follow <a href="https://x.com/NagpurACM" target="_blank" style="color: var(--primary); font-weight: 600; text-decoration: none;">@NagpurACM</a> on X (Twitter) and LinkedIn for the latest activity updates.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="icon-square">📍</div>
+                        <div>
+                            <h4>Location</h4>
+                            <p style="color: var(--text-muted); margin-top: 0.25rem;">Nagpur, Maharashtra, India. <br>Associated with VNIT and Ramdeobaba University.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form removed as requested -->
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
+                    <div class="icon-circle" style="width: 80px; height: 80px; font-size: 2.5rem; margin-bottom: 2rem;">🚀</div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Join ACM Nagpur</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 400px; line-height: 1.8;">
+                        Be part of a thriving community of tech professionals and students. Stay updated with our latest events and initiatives.
+                    </p>
+                    <a href="mailto:nagpur_acm@gmail.com" class="btn btn-primary" style="margin-top: 2rem;">Shoot us an Email</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column" style="max-width: 300px;">
+                    <a href="index.html" class="logo-link" style="margin-bottom: 1.5rem;">
+                        <span style="font-weight: 700; color: var(--primary); font-size: 1.5rem;">ACM NAGPUR</span>
+                    </a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Advancing Computing as a Science and Profession. Connecting local talent with global opportunities.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="events.html">Events Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://x.com/NagpurACM" target="_blank">X (Twitter)</a></li>
+                        <li><a href="mailto:nagpur_acm@gmail.com">Email Us</a></li>
+                        <li><a href="https://nagpur.acm.org/wp/" target="_blank">Official Site</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ACM Nagpur Professional Chapter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
