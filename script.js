@@ -84,33 +84,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Modal Logic - Globally Accessible
-function openEventModal(title, date, location, description, image, fallback) {
+function openEventModal(title, date, location, desc, extra, image, emoji) {
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalDate").innerText = "📅 " + date;
+    document.getElementById("modalLocation").innerText = "📍 " + location;
+    document.getElementById("modalDescription").innerText = desc;
 
-  const modal = document.getElementById('eventModal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDate = document.getElementById('modalDate');
-  const modalLocation = document.getElementById('modalLocation');
-  const modalDescription = document.getElementById('modalDescription');
-  const modalImage = document.getElementById('modalImage');
+    const container = document.getElementById("modalImageContainer");
 
-  if (modalTitle) modalTitle.textContent = title;
-  if (modalDate) modalDate.textContent = `📅 ${date}`;
-  if (modalLocation) modalLocation.textContent = `📍 ${location}`;
-  if (modalDescription) modalDescription.textContent = description;
+    // If image exists → show image
+    if (image && image.trim() !== "") {
+        container.innerHTML = `
+            <img src="${image}" 
+                 alt="${title}" 
+                 style="width:100%; height:300px; object-fit:cover;">
+        `;
+    } 
+    // Else → show emoji fallback
+    else {
+        container.innerHTML = `
+            <div style="width:100%; height:300px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#667eea,#764ba2); font-size:3rem; color:white;">
+                ${emoji || "📌"}
+            </div>
+        `;
+    }
 
-  if (modalImage) {
-    modalImage.src = "images/" + image;
-
-    modalImage.onerror = function () {
-      modalImage.src = fallback;
-    };
-  }
-
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+    document.getElementById("eventModal").classList.add("active");
 }
+
 function closeEventModal() {
   const modal = document.getElementById('eventModal');
   if (modal) {
