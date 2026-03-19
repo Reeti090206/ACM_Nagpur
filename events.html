@@ -128,7 +128,7 @@
                         </div>
                         <h3>ACM India Winter School 2025</h3>
                         <p style="color: var(--text-muted); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">Theme: Engineering the Future with Digital Twin. Limited to 40 participants!</p>
-                        <button onclick="openEventModal('ACM India Winter School 2025', 'Dec 15-24, 2025', 'RBU Nagpur', 'Theme: Engineering the Future with Digital Twin. This prestigious winter school brings together leading researchers and industry experts to discuss the latest advancements in Digital Twin technology. Participants will engage in hands-on labs, expert talks, and networking sessions.','Winterschool_acm.jpeg', 'https://via.placeholder.com/600x400?text=Digital+Twin+Winter+School')" class="btn btn-outline" style="width: 100%;">View Details</button>
+                        <button onclick="openEventModal('ACM India Winter School 2025', 'Dec 15-24, 2025', 'RBU Nagpur', 'Theme: Engineering the Future with Digital Twin. This prestigious winter school brings together leading researchers and industry experts to discuss the latest advancements in Digital Twin technology. Participants will engage in hands-on labs, expert talks, and networking sessions.','images/Winterschool_acm.jpeg', 'https://via.placeholder.com/600x400?text=Digital+Twin+Winter+School')" class="btn btn-outline" style="width: 100%;">View Details</button>
                     </div>
                 </div>
 <!-- St. Vincent Pallotti -->
@@ -156,7 +156,7 @@
         '1st November, 2025',
         'Computer Labs, 1st Floor, Dept. of CSE, SVPCET Nagpur',
         'A hands-on workshop on System Programming conducted by industry experts. Speakers included Mr. Asang Dani (Member of Technical Staff, Arista Networks) and Mr. Manoj Dhanorkar (Principal Architect, Persistent Systems). The session was accompanied by Mr. Gunjan Garge and Mr. Abhishek Anne from Persistent Systems, providing students practical exposure to system-level programming concepts and real-world industry insights.',
-        'Palloti.jpg',
+        'images/Palloti.jpg',
         'Palloti.jpg'
         )" class="btn btn-outline" style="width: 100%;">
             View Details
@@ -293,7 +293,7 @@
                                 <li>Dr. Purshottam J. Assudani (RBU)</li>
                             </ul>
                         </div>
-                        <button onclick="openEventModal('Cloud Sphere 2025', 'Early 2025', 'JIT ACM Chapter', 'An insightful session on modern cloud infrastructure and big data tools. Featuring keynote speakers from Persistent Systems and academic leaders, this event provided deep dives into scalable architectures and data pipelines.','JIT.png', 'https://via.placeholder.com/600x400?text=Cloud+Sphere+2025')" class="btn btn-outline" style="width: 100%;">View Details</button>
+                        <button onclick="openEventModal('Cloud Sphere 2025', 'Early 2025', 'JIT ACM Chapter', 'An insightful session on modern cloud infrastructure and big data tools. Featuring keynote speakers from Persistent Systems and academic leaders, this event provided deep dives into scalable architectures and data pipelines.','images/JIT.png', 'https://via.placeholder.com/600x400?text=Cloud+Sphere+2025')" class="btn btn-outline" style="width: 100%;">View Details</button>
                     </div>
                 </div>
 
@@ -369,7 +369,7 @@
             'Dec 20–21, 2024',
             'Government College of Engineering, Amravati',
             'ICAESD 2024 was an international conference organized by the Government College of Engineering, Amravati, under the Diamond Jubilee Celebrations. It brought together researchers, academicians, and industry experts to discuss advancements and sustainable practices in engineering and technology.',
-            '',
+            'images/Amravati.png',
             'images/Amravati.png',
             '🌱🏗️'
         )" 
@@ -397,7 +397,7 @@
                             <strong>Inaugurated by:</strong> Er. Snehal Aekre
                         </div>
                          
-                        <button onclick="openEventModal('CODERUSH 1.0', 'Aug 22-23, 2024', 'YCCE Nagpur', 'CODERUSH 1.0 was a landmark 24-hour national hackathon that saw over 1,400 registrations. Part of Compufest 2025, it featured intense competition, industry mentorship, and significant social media engagement.' ,'Coderush.jpeg', 'https://via.placeholder.com/600x400?text=CODERUSH+1.0')" class="btn btn-outline" style="width: 100%;">View Details</button>
+                        <button onclick="openEventModal('CODERUSH 1.0', 'Aug 22-23, 2024', 'YCCE Nagpur', 'CODERUSH 1.0 was a landmark 24-hour national hackathon that saw over 1,400 registrations. Part of Compufest 2025, it featured intense competition, industry mentorship, and significant social media engagement.' ,'images/Coderush.jpeg', 'https://via.placeholder.com/600x400?text=CODERUSH+1.0')" class="btn btn-outline" style="width: 100%;">View Details</button>
                     </div>
                 </div>
 
@@ -580,7 +580,7 @@ onclick="openNewsModal(
 <div class="news-card"
 onclick="openNewsModal(
 'PCE Conducts Cloud Computing Session',
-'cloud_PCE.png',
+'images/cloud_PCE.png',
 'Priyadarshini College of Engineering ACM Student Chapter organized the Cloud Sphere session in collaboration with ACM Nagpur Professional Chapter focusing on real-world cloud computing applications.'
 )">
 
@@ -596,7 +596,7 @@ onclick="openNewsModal(
 <div class="news-card"
 onclick="openNewsModal(
 'Workshop on Engineering with Digital Twins',
-'digital_twin.jpg',
+'images/digital_twin.jpg',
 'ACM Nagpur Professional Chapter conducted a Winter School workshop on Engineering the Future with Digital Twins where selected students participated in expert sessions and hands-on training.'
 )">
 
@@ -665,8 +665,10 @@ onclick="openNewsModal(
     <div id="eventModal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-modal" onclick="closeEventModal()">&times;</span>
-          <div id="modalImageContainer" style="margin: -3.5rem -3.5rem 2rem; border-radius: 20px 20px 0 0; overflow: hidden;">
-</div>
+             <div id="modalImageContainer" 
+              style="width: 100%; height: 300px; overflow: hidden; border-radius: 20px 20px 0 0;">
+            </div>
+
             <div class="modal-header">
                 <h2 id="modalTitle" class="modal-title">Event Title</h2>
                 <div class="modal-meta">
@@ -688,3 +690,4 @@ onclick="openNewsModal(
     <script src="script.js"></script>
 </body>
 </html>
+
