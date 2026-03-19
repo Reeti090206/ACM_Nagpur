@@ -90,17 +90,26 @@ function openEventModal(title, date, location, description, image) {
   const modalDate = document.getElementById('modalDate');
   const modalLocation = document.getElementById('modalLocation');
   const modalDescription = document.getElementById('modalDescription');
-  const modalImage = document.getElementById('modalImage');
+  const imageContainer = document.getElementById('modalImageContainer');
 
   if (modalTitle) modalTitle.textContent = title;
-  if (modalDate) modalDate.textContent = `📅 ${date}`;
-  if (modalLocation) modalLocation.textContent = `📍 ${location}`;
+  if (modalDate) modalDate.textContent = `${date}`;
+  if (modalLocation) modalLocation.textContent = ` ${location}`;
   if (modalDescription) modalDescription.textContent = description;
-  if (modalImage) modalImage.src = image;
+
+  
+  if (imageContainer) {
+    imageContainer.innerHTML = `
+  <img src="${image}" 
+       style="width:100%; height:100%; object-fit:cover; display:block;"
+       onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'">
+`;
+
+  }
 
   if (modal) {
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent scroll
+    document.body.style.overflow = 'hidden';
   }
 }
 
